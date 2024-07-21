@@ -11,14 +11,11 @@ const app = express();
 
 // Use cors middleware to allow requests from your frontend
 app.use(cors({
-  origin: 'http://localhost:5173', //  frontend's URL
+  origin: ['http://localhost:5173', 'https://password-reset-nodejs-be.onrender.com'], //  frontend's URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 
-// Parse incoming request bodies in a middleware before your handlers
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 router.get("/test", (req, res) => {
   res.json({ message: "API Testing Successful" });
