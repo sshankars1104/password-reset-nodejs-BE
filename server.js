@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Add CORS middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://password-reset-nodejs-be.onrender.com'], //frontend domains
+  origin: ['http://localhost:5173', 'https://password-reset-nodejs-fe.netlify.app', 'https://password-reset-nodejs-be.onrender.com'], //frontend domains
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
