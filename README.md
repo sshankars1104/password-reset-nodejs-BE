@@ -23,21 +23,23 @@ Description: Endpoint to test if the API is working correctly.</br>
 
 ## User Registration:
 
-URL: http://localhost:3000/api/user
-Method: POST
-Description: Endpoint to register a new user.
-Request Body:
-{
-"email": "user@example.com",
-"password": "userpassword"
-}
+Deployed URL: https://password-reset-nodejs-be.onrender.com/user</br>
+Local URL: http://localhost:3000/api/user</br>
+Method: POST</br>
+Description: Endpoint to register a new user.</br>
+Request Body:</br>
+{</br>
+"email": "user@example.com",</br>
+"password": "userpassword"</br>
+}</br>
 
 ## User Authentication:
 
-URL: http://localhost:3000/api/authenticate
-Method: POST
-Description: Endpoint to authenticate a user and obtain a JWT token.
-Request Body:
+Deployed URL: https://password-reset-nodejs-be.onrender.com/api/authenticate</br>
+Local URL: http://localhost:3000/api/authenticate</br>
+Method: POST</br>
+Description: Endpoint to authenticate a user and obtain a JWT token.</br>
+Request Body:</br>
 
 {</br>
 "email": "user@example.com",</br>
@@ -46,10 +48,11 @@ Request Body:
 
 ## Password Reset Request:
 
-URL: http://localhost:3000/api/reset-password
-Method: POST
-Description: Endpoint to request a password reset. Sends a reset token to the user's email.
-Request Body:
+Deployed URL: https://password-reset-nodejs-be.onrender.com/api/reset-password</br>
+Local URL: http://localhost:3000/api/reset-password</br>
+Method: POST</br>
+Description: Endpoint to request a password reset. Sends a reset token to the user's email.</br>
+Request Body:</br>
 
 {</br>
 "email": "user@example.com"</br>
@@ -57,15 +60,20 @@ Request Body:
 
 ## Password Reset:
 
-URL: http://localhost:3000/api/reset-password/:resetToken
-Method: POST
-Description: Endpoint to reset the user's password using the reset token.
-Request Body:
+Deployed URL: https://password-reset-nodejs-be.onrender.com/api/reset-password/:resetToken</br>
+Local URL: http://localhost:3000/api/reset-password/:resetToken</br>
+Method: POST</br>
+Description: Endpoint to reset the user's password using the reset token.</br>
+Request Body:</br>
 
-{
-"password": "newpassword"
-}
+{</br>
+"password": "newpassword"</br>
+}</br>
 
-### Render.com Link:
+### Render.com Link:(Deployed URL)
 
-https://password-reset-nodejs-be.onrender.com
+https://password-reset-nodejs-be.onrender.com</br>
+
+## Local URL
+
+http://localhost:3000
