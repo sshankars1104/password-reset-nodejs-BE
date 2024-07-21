@@ -16,6 +16,10 @@ app.use(cors({
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 
+// Parse incoming request bodies in a middleware before your handlers
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 router.get("/test", (req, res) => {
   res.json({ message: "API Testing Successful" });
 });
