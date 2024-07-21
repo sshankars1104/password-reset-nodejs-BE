@@ -1,9 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+
+// Add CORS middleware
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://password-reset-nodejs-be.onrender.com'], //frontend domains
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+}));
 
 // Check if environment variables are loaded
 if (!process.env.DB_CONNECTION_STRING) {
@@ -28,7 +36,7 @@ database.on("connected", () => console.log('MongoDB connected'));
 const userRoutes = require("./Router/userRoutes.js");
 app.use("/api", userRoutes);
 
-// Protected route example
+// Protected route
 const verifyToken = require("./middleware/verifyToken");
 app.get("/api/protected", verifyToken, (req, res) => {
   res.json({ message: "This is a protected route.", user: req.user });

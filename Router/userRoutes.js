@@ -6,15 +6,7 @@ const User = require("../models/user.js");
 const generateToken = require("../utils/generateToken.js");
 const verifyToken = require("../middleware/verifyToken.js");
 const sendEmail = require("../utils/sendEmail.js");
-const cors = require('cors');
 const app = express();
-
-// Use cors middleware to allow requests from your frontend
-app.use(cors({
-  origin: ['http://localhost:5173', 'https://password-reset-nodejs-be.onrender.com'], //  frontend's URL
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-}));
 
 
 router.get("/test", (req, res) => {
