@@ -7,6 +7,7 @@ const generateToken = require("../utils/generateToken.js");
 const verifyToken = require("../middleware/verifyToken.js");
 const sendEmail = require("../utils/sendEmail.js");
 const cors = require('cors');
+const app = express();
 
 // Use cors middleware to allow requests from your frontend
 app.use(cors({
